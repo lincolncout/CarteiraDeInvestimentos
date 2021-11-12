@@ -1,0 +1,111 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<head runat="server">
+    <title>Teste</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/js/script.js"></script>
+</head>
+
+<div class="text-center">
+    <h1 class="display-4">Carteira de Investimentos</h1>
+    @*<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>*@
+</div>
+<main>
+    <div class="row">
+
+        <div class="form-group col-sm-12 col-md-6">
+            <label for="nome">Nome:</label>
+            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome aqui">
+        </div>
+
+        <div class="form-group col-sm-12 col-md-6">
+            <label for="recursos">Quantidade Total de Recursos:</label>
+            <input type="text" class="form-control" id="recursos" placeholder="Digite o valor que deseja">
+        </div>
+
+        <div class="dropdown col-sm-12 col-md-6">
+            <h2 class="dropdown-title">
+                Perfil de investidor:
+            </h2>
+            <select class="form-select">
+                <option value="conservador">Conservador</option>
+                <option value="moderado">Moderado</option>
+                <option value="arrojado">Arrojado</option>
+            </select>
+        </div>
+
+        <div class="dropdown col-sm-12 col-md-6">
+            <h2 class="dropdown-title">
+                Tempo esperado de retorno:
+            </h2>
+            <select class="form-select">
+                <option value="1">Até 1 ano</option>
+                <option value="1-3">1 a 3 anos</option>
+                <option value="3-5">3 a 5 anos</option>
+                <option value="5+">Mais de 5 anos</option>
+            </select>
+        </div>
+        <div class="slider col-sm-12 col-md-12">
+            <h2 class="slider-title">
+                Fator de Risco:
+            </h2>
+            <input  class="slider-view" type="range" value="24" min="0" max="100" oninput="this.nextElementSibling.value = this.value">
+            <output>24</output>
+        </div>
+    </div>
+</main>
+
+<section>
+    <div class="ativos-financeiros">
+        <h1 class="ativos-financeiros-title" >
+            Ativos Financeiros:
+        </h1>
+        <div class="lista row">
+            <div class="nome-ativo col-md-3">
+                <label for="nome-ativo">Nome do ativo:</label>
+                <input type="text" class="form-control" id="nome-ativo" placeholder="Digite o nome do ativo">
+            </div>
+            <div class="dropdown-tipo col-md-2">
+                <h2 class="dropdown-title">
+                    Tipo do Ativo:
+                </h2>
+                <select class="form-select tipo-ativo">
+                    <option value="1">Renda Fixa</option>
+                    <option value="2">Renda Variável</option>
+                    <option value="3">Fundos de Investimento</option>
+                    <option value="4">Tesouro Direto</option>
+                    <option value="5">Poupança</option>
+                    <option value="6">Descrição matemática do problema</option>
+                </select>
+            </div>
+            <div class="rendimento col-md-1">
+                <label for="rendimento">Rendimento:</label>
+                <input type="text" class="form-control" id="rendimento" placeholder="Rendimento">
+            </div>
+
+            <div class="risco col-md-1">
+                <label for="risco">Risco:</label>
+                <input type="text" class="form-control" id="risco" placeholder="Risco">
+            </div>
+
+            <div class="investimento col-md-2">
+                <label for="investimento">Qtd máx:</label>
+                <input type="text" class="form-control" id="investimento" placeholder="Qt máx invest.">
+            </div>
+            <div class="minus col-md-1">
+                <button class="btn"><i class="fa fa-minus"></i></button>
+            </div>
+            <div class="plus col-md-1">
+                <button class="btn"><i class="fa fa-plus"></i></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="text-center">
+    <button type="button" class=" btn-primary">Gerar carteira</button>
+</div>
+
